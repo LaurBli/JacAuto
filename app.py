@@ -39,13 +39,16 @@ class SubtractionLayout(GridLayout):
             first = int(self.kilometri_plecare.text)
             second = int(self.kilometri_sosire.text)
             difference = second - first
-            self.result.text = str(difference)
-            self.kilometri_bucuresti.text = str(difference // 4)
-            self.kilometri_alte_localitati.text = str(difference // 4)
-            self.drumuri_neamenajate.text = str(difference // 4)
-            self.patrulare.text = str(difference - (difference // 4) * 3)
+            if difference >0:
+                self.result.text = str(difference)
+                self.kilometri_bucuresti.text = str(difference // 4)
+                self.kilometri_alte_localitati.text = str(difference // 4)
+                self.drumuri_neamenajate.text = str(difference // 4)
+                self.patrulare.text = str(difference - (difference // 4) * 3)
+            else:
+                self.result.text = 'Iti da cu minus!'
         except ValueError:
-            self.result.text = 'Nu poti sa aduni litere, jacule!'
+            self.result.text = 'Nu poti sa aduni litere!'
             self.kilometri_bucuresti.text = ''
             self.kilometri_alte_localitati.text = ''
             self.drumuri_neamenajate.text = ''
