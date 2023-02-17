@@ -16,11 +16,12 @@ class MainMenuButton(Screen):
         sm.current = 'main_menu'
 
 
-class MainMenuScreen(BoxLayout, Screen):
+class MainMenuScreen(GridLayout, Screen):
     def __init__(self, **kwargs):
         super(MainMenuScreen, self).__init__(**kwargs)
+        self.cols = 2
         # self.add_widget(Label(text='Main Menu'))
-        btn = Button(text='NITRO')
+        btn = Button(text='NITRO', font_size=40)
         btn.bind(on_press=self.goto_calculatorNitro)
         self.add_widget(btn)
         btn = Button(text='Ambasade')
