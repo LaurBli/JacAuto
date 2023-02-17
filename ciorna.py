@@ -1,4 +1,7 @@
+import random
+
 from kivy.app import App
+from kivy.uix.dropdown import DropDown
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.label import Label
@@ -15,7 +18,7 @@ class MainMenuScreen(Screen):
     def __init__(self, **kwargs):
         super(MainMenuScreen, self).__init__(**kwargs)
         self.add_widget(Label(text='Main Menu'))
-        btn = Button(text='NITRO')
+        btn = Button(text='NITRO',font_size=40)
         btn.bind(on_press=self.goto_calculator)
         self.add_widget(btn)
 
@@ -27,6 +30,25 @@ class CalculatorScreen(GridLayout,MainMenuButton):
     def __init__(self, **kwargs):
         super(CalculatorScreen, self).__init__(**kwargs)
         self.cols = 2
+        self.cols_minimum = {0: 300, 1: 100}
+        # DROPDOWN INCEPE AICI------------------------------------------------------------------------------
+        self.dropdown = DropDown()
+        options = ['Buftea', 'Bragadiru', 'Popesti']
+
+        # add items to the dropdown
+        for option in options:
+            btn = Button(text=option, size_hint_y=None, height=60,font_size=40,background_color=(1, 1, 0, 1))
+            btn.bind(on_release=lambda buton: self.dropdown.select(buton.text))
+            self.dropdown.add_widget(btn)
+
+        # create a button to trigger the dropdown
+        self.dropdown_btn = Button(text='Selecteaza zona', size_hint_y=None,size =(60,60),font_size=40,background_color=(0, 1, 1, 1))
+        self.dropdown_btn.bind(on_release=self.dropdown.open)
+        self.dropdown.bind(on_select=lambda instance, x: setattr(self.dropdown_btn, 'text', x))
+
+        # add the dropdown button to the main screen
+        self.add_widget(self.dropdown_btn)
+        self.add_widget(Label(text='', font_size=20,size_hint_y=None, height=44))
         self.add_widget(Label(text='Kilometri plecare:', font_size=40))
         self.kilometri_plecare = TextInput(multiline=False, font_size=40)
         self.add_widget(self.kilometri_plecare)
@@ -56,24 +78,27 @@ class CalculatorScreen(GridLayout,MainMenuButton):
         self.add_widget(self.gotoMenu)
 
     def calculate(self, instance):
-        try:
-            first = int(self.kilometri_plecare.text)
-            second = int(self.kilometri_sosire.text)
-            difference = second - first
-            if difference > 0:
-                self.result.text = str(difference)
-                self.kilometri_bucuresti.text = str(difference // 4)
-                self.kilometri_alte_localitati.text = str(difference // 4)
-                self.drumuri_neamenajate.text = str(difference // 4)
-                self.patrulare.text = str(difference - (difference // 4) * 3)
-            else:
-                self.result.text = 'Iti da cu minus!'
-        except ValueError:
-            self.result.text = 'Nu poti sa aduni litere!'
-            self.kilometri_bucuresti.text = ''
-            self.kilometri_alte_localitati.text = ''
-            self.drumuri_neamenajate.text = ''
-            self.patrulare.text = ''
+        if self.dropdown_btn.text == 'Buftea':
+            self.result.text = 'CEAU'
+        else:
+            try:
+                first = int(self.kilometri_plecare.text)
+                second = int(self.kilometri_sosire.text)
+                difference = second - first
+                if difference > 0:
+                    self.result.text = str(difference)
+                    self.kilometri_bucuresti.text = str(difference // 4)
+                    self.kilometri_alte_localitati.text = str(difference // 4)
+                    self.drumuri_neamenajate.text = str(difference // 4)
+                    self.patrulare.text = str(difference - (difference // 4) * 3)
+                else:
+                    self.result.text = 'Iti da cu minus!'
+            except ValueError:
+                self.result.text = 'Nu poti sa aduni litere!'
+                self.kilometri_bucuresti.text = ''
+                self.kilometri_alte_localitati.text = ''
+                self.drumuri_neamenajate.text = ''
+                self.patrulare.text = ''
 
 class MainMenuApp(App):
     def build(self):
