@@ -88,6 +88,10 @@ class CalculatorNitro(GridLayout, MainMenuButton):
                 self.patrulare.text = str(0)
             else:
                 self.result.text = 'Iti da cu minus!'
+                self.kilometri_bucuresti.text = ''
+                self.kilometri_alte_localitati.text = ''
+                self.drumuri_neamenajate.text = ''
+                self.patrulare.text = ''
         except ValueError:
             self.result.text = 'Nu poti sa aduni litere!'
             self.kilometri_bucuresti.text = ''
@@ -141,6 +145,10 @@ class CalculatorAmbasade(GridLayout, MainMenuButton):
                 self.patrulare.text = str(0)
             else:
                 self.result.text = 'Iti da cu minus!'
+                self.kilometri_bucuresti.text = ''
+                self.kilometri_alte_localitati.text = ''
+                self.drumuri_neamenajate.text = ''
+                self.patrulare.text = ''
         except ValueError:
             self.result.text = 'Nu poti sa aduni litere!'
             self.kilometri_bucuresti.text = ''
@@ -194,6 +202,10 @@ class CalculatorMixte(GridLayout, MainMenuButton):
                 self.patrulare.text = str(0)
             else:
                 self.result.text = 'Iti da cu minus!'
+                self.kilometri_bucuresti.text = ''
+                self.kilometri_alte_localitati.text = ''
+                self.drumuri_neamenajate.text = ''
+                self.patrulare.text = ''
         except ValueError:
             self.result.text = 'Nu poti sa aduni litere!'
             self.kilometri_bucuresti.text = ''

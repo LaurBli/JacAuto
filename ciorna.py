@@ -33,7 +33,7 @@ class CalculatorScreen(GridLayout,MainMenuButton):
         self.cols_minimum = {0: 300, 1: 100}
         # DROPDOWN INCEPE AICI------------------------------------------------------------------------------
         self.dropdown = DropDown()
-        options = ['Buftea', 'Bragadiru', 'Popesti']
+        options = ['Buftea', 'Bragadiru', 'Popești-Leordeni', 'Măgurele', 'Chitila', 'Otopeni', 'Voluntari', 'Pantelimon', 'Snagov']
 
         # add items to the dropdown
         for option in options:
