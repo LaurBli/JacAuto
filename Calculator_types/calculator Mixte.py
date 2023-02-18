@@ -4,10 +4,10 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 
-class SubtractionLayout(GridLayout):
+class CalculatorMixte(GridLayout):
 
     def __init__(self, **kwargs):
-        super(SubtractionLayout, self).__init__(**kwargs)
+        super(CalculatorMixte, self).__init__(**kwargs)
         self.cols = 2
         self.add_widget(Label(text='Kilometri plecare:',font_size =40))
         self.kilometri_plecare = TextInput(multiline=False, font_size =40)
@@ -57,7 +57,7 @@ class SubtractionLayout(GridLayout):
 class JacAutoApp(App):
 
     def build(self):
-        return SubtractionLayout()
+        return CalculatorMixte()
 
 if __name__ == '__main__':
     JacAutoApp().run()
