@@ -26,14 +26,17 @@ class MainMenuScreen(GridLayout, Screen):
         btn = Button(text='NITRO', font_size=40)
         btn.bind(on_press=self.goto_calculatorNitro)
         self.add_widget(btn)
-        btn = Button(text='Ambasade',font_size=40)
+        btn = Button(text='Ambasade', font_size=40)
         btn.bind(on_press=self.goto_calculatorAmbasade)
         self.add_widget(btn)
-        btn = Button(text='Mixte',font_size=40)
+        btn = Button(text='Mixte', font_size=40)
         btn.bind(on_press=self.goto_calculatorMixte)
         self.add_widget(btn)
-        btn = Button(text='A.o.p/Coop',font_size=40)
+        btn = Button(text='A.o.p/Coop', font_size=40)
         btn.bind(on_press=self.goto_calculatorAop)
+        self.add_widget(btn)
+        btn = Button(text='Obiective A.T.', font_size=40)
+        btn.bind(on_press=self.goto_calculatorObiective)
         self.add_widget(btn)
 
     def goto_calculatorNitro(self, instance):
@@ -43,6 +46,7 @@ class MainMenuScreen(GridLayout, Screen):
     def goto_calculatorAmbasade(self, instance):
         sm = self.manager
         sm.current = 'calculator_Ambasade'
+
     def goto_calculatorMixte(self, instance):
         sm = self.manager
         sm.current = 'calculator_Mixte'
@@ -50,6 +54,9 @@ class MainMenuScreen(GridLayout, Screen):
     def goto_calculatorAop(self, instance):
         sm = self.manager
         sm.current = 'calculator_Aop'
+    def goto_calculatorObiective(self, instance):
+        sm = self.manager
+        sm.current = 'calculator_ob'
 
 
 class CalculatorNitro(GridLayout, MainMenuButton):
@@ -165,33 +172,34 @@ class CalculatorAmbasade(GridLayout, MainMenuButton):
             self.drumuri_neamenajate.text = ''
             self.patrulare.text = ''
 
+
 class CalculatorMixte(GridLayout, MainMenuButton):
 
     def __init__(self, **kwargs):
         super(CalculatorMixte, self).__init__(**kwargs)
         self.cols = 2
-        self.add_widget(Label(text='Kilometri plecare:',font_size =40))
-        self.kilometri_plecare = TextInput(multiline=False, font_size =40)
+        self.add_widget(Label(text='Kilometri plecare:', font_size=40))
+        self.kilometri_plecare = TextInput(multiline=False, font_size=40)
         self.add_widget(self.kilometri_plecare)
-        self.add_widget(Label(text='Kilometri sosire:',font_size =40))
-        self.kilometri_sosire = TextInput(multiline=False, font_size =40)
+        self.add_widget(Label(text='Kilometri sosire:', font_size=40))
+        self.kilometri_sosire = TextInput(multiline=False, font_size=40)
         self.add_widget(self.kilometri_sosire)
-        self.add_widget(Label(text='Total kilometri:',font_size =40))
-        self.result = Label(text='',font_size =40)
+        self.add_widget(Label(text='Total kilometri:', font_size=40))
+        self.result = Label(text='', font_size=40)
         self.add_widget(self.result)
-        self.add_widget(Label(text='Bucuresti:',font_size =40))
-        self.kilometri_bucuresti = Label(text='', font_size =40)
+        self.add_widget(Label(text='Bucuresti:', font_size=40))
+        self.kilometri_bucuresti = Label(text='', font_size=40)
         self.add_widget(self.kilometri_bucuresti)
-        self.add_widget(Label(text='Alte localitati:',font_size =40))
-        self.kilometri_alte_localitati = Label(text='', font_size =40)
+        self.add_widget(Label(text='Alte localitati:', font_size=40))
+        self.kilometri_alte_localitati = Label(text='', font_size=40)
         self.add_widget(self.kilometri_alte_localitati)
-        self.add_widget(Label(text='Drumuri neamenajate:',font_size =40))
-        self.drumuri_neamenajate = Label(text='', font_size =40)
+        self.add_widget(Label(text='Drumuri neamenajate:', font_size=40))
+        self.drumuri_neamenajate = Label(text='', font_size=40)
         self.add_widget(self.drumuri_neamenajate)
-        self.add_widget(Label(text='Patrulare:',font_size =40))
-        self.patrulare = Label(text='', font_size =40)
+        self.add_widget(Label(text='Patrulare:', font_size=40))
+        self.patrulare = Label(text='', font_size=40)
         self.add_widget(self.patrulare)
-        self.subtract = Button(text='Calculeaza',font_size =40, background_color=(0, 1, 0, 1))
+        self.subtract = Button(text='Calculeaza', font_size=40, background_color=(0, 1, 0, 1))
         self.subtract.bind(on_press=self.calculate)
         self.add_widget(self.subtract)
         self.gotoMenu = Button(text='Meniu', font_size=40)
@@ -205,7 +213,7 @@ class CalculatorMixte(GridLayout, MainMenuButton):
             difference = second - first
             if difference > 0:
                 self.result.text = str(difference)
-                self.kilometri_bucuresti.text = str(3*(difference//4))
+                self.kilometri_bucuresti.text = str(3 * (difference // 4))
                 self.kilometri_alte_localitati.text = str(difference - int(self.kilometri_bucuresti.text))
                 self.drumuri_neamenajate.text = str(0)
                 self.patrulare.text = str(0)
@@ -223,7 +231,7 @@ class CalculatorMixte(GridLayout, MainMenuButton):
             self.patrulare.text = ''
 
 
-class CalculatorAsigurare(GridLayout,MainMenuButton):
+class CalculatorAsigurare(GridLayout, MainMenuButton):
 
     def __init__(self, **kwargs):
         super(CalculatorAsigurare, self).__init__(**kwargs)
@@ -502,6 +510,118 @@ class CalculatorAsigurare(GridLayout,MainMenuButton):
             self.kilometri_alte_localitati.text = 'patrulă!'
             self.drumuri_neamenajate.text = ''
             self.patrulare.text = ''
+
+
+class CalculatorObiective(GridLayout,MainMenuButton):
+
+    def __init__(self, **kwargs):
+        super(CalculatorObiective, self).__init__(**kwargs)
+        self.cols = 2
+
+        self.dropdown = DropDown()
+        options = ['Det. 4, Det. 5', 'Alte Obiective']
+
+        # add items to the dropdown
+        for option in options:
+            btn = Button(text=option, size_hint_y=None, height=60, font_size=40, background_color=(1, 1, 0, 1))
+            btn.bind(on_release=lambda buton: self.dropdown.select(buton.text))
+            self.dropdown.add_widget(btn)
+
+        # create a button to trigger the dropdown
+        self.dropdown_btn = Button(text=' Obiective:', size_hint_y=None, size=(60, 60), font_size=40, background_color=(0, 1, 1, 1))
+        self.dropdown_btn.bind(on_release=self.dropdown.open)
+        self.dropdown.bind(on_select=lambda instance, x: setattr(self.dropdown_btn, 'text', x))
+
+        # add the dropdown button to the main screen
+        self.add_widget(self.dropdown_btn)
+        self.add_widget(Label(text='', size_hint_y=None, size=(60, 60)))
+        self.add_widget(Label(text='Kilometri plecare:', font_size=40))
+        self.kilometri_plecare = TextInput(multiline=False, font_size=40)
+        self.add_widget(self.kilometri_plecare)
+        self.add_widget(Label(text='Kilometri sosire:', font_size=40))
+        self.kilometri_sosire = TextInput(multiline=False, font_size=40)
+        self.add_widget(self.kilometri_sosire)
+        self.add_widget(Label(text='Total kilometri:', font_size=40))
+        self.result = Label(text='', font_size=40)
+        self.add_widget(self.result)
+        self.add_widget(Label(text='Bucuresti:', font_size=40))
+        self.kilometri_bucuresti = Label(text='', font_size=40)
+        self.add_widget(self.kilometri_bucuresti)
+        self.add_widget(Label(text='Alte localitati:', font_size=40))
+        self.kilometri_alte_localitati = Label(text='', font_size=40)
+        self.add_widget(self.kilometri_alte_localitati)
+        self.add_widget(Label(text='Drumuri neamenajate:', font_size=40))
+        self.drumuri_neamenajate = Label(text='', font_size=40)
+        self.add_widget(self.drumuri_neamenajate)
+        self.add_widget(Label(text='Patrulare:', font_size=40))
+        self.patrulare = Label(text='', font_size=40)
+        self.add_widget(self.patrulare)
+        self.subtract = Button(text='Calculeaza', font_size=40)
+        self.subtract.bind(on_press=self.calculate)
+        self.add_widget(self.subtract)
+        self.gotoMenu = Button(text='Meniu', font_size=40)
+        self.gotoMenu.bind(on_press=self.goto_mainMenu)
+        self.add_widget(self.gotoMenu)
+
+    def calculate(self, instance):
+        localitate = self.dropdown_btn.text
+        if self.dropdown_btn.text == 'Det. 4, Det. 5':
+            try:
+                first = int(self.kilometri_plecare.text)
+                second = int(self.kilometri_sosire.text)
+                difference = second - first
+                if difference > 0:
+                    self.patrulare.text = str(random.randint(8, 15))
+                    self.result.text = str(difference)
+                    self.kilometri_bucuresti.text = str(random.randint(15, 20))
+                    self.kilometri_alte_localitati.text = str(difference - int(self.kilometri_bucuresti.text) - int(self.patrulare.text))
+                    self.drumuri_neamenajate.text = str(0)
+
+                else:
+                    self.result.text = 'Iti da cu minus!'
+                    self.kilometri_bucuresti.text = ''
+                    self.kilometri_alte_localitati.text = ''
+                    self.drumuri_neamenajate.text = ''
+                    self.patrulare.text = ''
+            except ValueError:
+                self.result.text = 'Nu poti sa aduni litere!'
+                self.kilometri_bucuresti.text = ''
+                self.kilometri_alte_localitati.text = ''
+                self.drumuri_neamenajate.text = ''
+                self.patrulare.text = ''
+
+        elif self.dropdown_btn.text == 'Alte Obiective':
+            try:
+                first = int(self.kilometri_plecare.text)
+                second = int(self.kilometri_sosire.text)
+                difference = second - first
+                if difference > 0:
+                    self.patrulare.text = str(0)
+                    self.result.text = str(difference)
+                    self.kilometri_bucuresti.text = str(random.randint(15, 20))
+                    self.kilometri_alte_localitati.text = str(difference - int(self.kilometri_bucuresti.text))
+                    self.drumuri_neamenajate.text = str(0)
+
+                else:
+                    self.result.text = 'Iti da cu minus!'
+                    self.kilometri_bucuresti.text = ''
+                    self.kilometri_alte_localitati.text = ''
+                    self.drumuri_neamenajate.text = ''
+                    self.patrulare.text = ''
+            except ValueError:
+                self.result.text = 'Nu poti sa aduni litere!'
+                self.kilometri_bucuresti.text = ''
+                self.kilometri_alte_localitati.text = ''
+                self.drumuri_neamenajate.text = ''
+                self.patrulare.text = ''
+        else:
+            self.result.text = 'Selectează'
+            self.kilometri_bucuresti.text = 'obiectivele!'
+            self.kilometri_alte_localitati.text = ''
+            self.drumuri_neamenajate.text = ''
+            self.patrulare.text = ''
+
+
 class JacAuto(App):
     def build(self):
         sm = ScreenManager()
@@ -510,11 +630,13 @@ class JacAuto(App):
         calculatorAmbasade = CalculatorAmbasade(name='calculator_Ambasade')
         calculatorMixte = CalculatorMixte(name='calculator_Mixte')
         calculatorAop = CalculatorAsigurare(name='calculator_Aop')
+        calculatorObiective = CalculatorObiective(name='calculator_ob')
         sm.add_widget(main_menu)
         sm.add_widget(calculatorNitro)
         sm.add_widget(calculatorAmbasade)
         sm.add_widget(calculatorMixte)
         sm.add_widget(calculatorAop)
+        sm.add_widget(calculatorObiective)
         return sm
 
 
