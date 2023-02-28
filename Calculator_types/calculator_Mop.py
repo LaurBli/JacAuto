@@ -1,13 +1,24 @@
 import random
 
 from kivy.app import App
+from kivy.graphics import Color, Rectangle
 from kivy.uix.dropdown import DropDown
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 
+class MyLabel(Label):
+    def __init__(self, **kwargs):
+        super(MyLabel, self).__init__(**kwargs)
+        with self.canvas.before:
+            Color(0, 0, 1, 1)  # set the background color to red
+            self.rect = Rectangle(size=self.size, pos=self.pos)
+        self.bind(size=self._update_rect, pos=self._update_rect)
 
+    def _update_rect(self, instance, value):
+        self.rect.pos = instance.pos
+        self.rect.size = instance.size
 class CalculatorMentinere(GridLayout):
 
     def __init__(self, **kwargs):
@@ -46,10 +57,10 @@ class CalculatorMentinere(GridLayout):
 
         # add the dropdown button to the main screen
         self.add_widget(self.dropdown2_btn)
-        self.add_widget(Label(text='Kilometri plecare:', font_size=40))
+        self.add_widget(MyLabel(text='Kilometri plecare:', font_size=40))
         self.kilometri_plecare = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_plecare)
-        self.add_widget(Label(text='Kilometri sosire:', font_size=40))
+        self.add_widget(MyLabel(text='Kilometri sosire:', font_size=40))
         self.kilometri_sosire = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_sosire)
         self.add_widget(Label(text='Total kilometri:', font_size=40))
