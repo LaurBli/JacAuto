@@ -47,10 +47,10 @@ class CalculatorAsigurare(GridLayout):
         # add the dropdown button to the main screen
         self.add_widget(self.dropdown2_btn)
         self.add_widget(Label(text='Kilometri plecare:', font_size=40))
-        self.kilometri_plecare = TextInput(multiline=False, font_size=40)
+        self.kilometri_plecare = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_plecare)
         self.add_widget(Label(text='Kilometri sosire:', font_size=40))
-        self.kilometri_sosire = TextInput(multiline=False, font_size=40)
+        self.kilometri_sosire = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_sosire)
         self.add_widget(Label(text='Total kilometri:', font_size=40))
         self.result = Label(text='', font_size=40)
