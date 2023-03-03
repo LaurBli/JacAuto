@@ -9,9 +9,10 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 
-class MyLabel(Label):
+
+class MyLabelBlue(Label):
     def __init__(self, **kwargs):
-        super(MyLabel, self).__init__(**kwargs)
+        super(MyLabelBlue, self).__init__(**kwargs)
         with self.canvas.before:
             Color(0, 0, 1, 1)  # set the background color to red
             self.rect = Rectangle(size=self.size, pos=self.pos)
@@ -20,6 +21,8 @@ class MyLabel(Label):
     def _update_rect(self, instance, value):
         self.rect.pos = instance.pos
         self.rect.size = instance.size
+
+
 class MainMenuButton(Screen):
     def __init__(self, **kwargs):
         super(MainMenuButton, self).__init__(**kwargs)
@@ -34,22 +37,22 @@ class MainMenuScreen(GridLayout, Screen):
         super(MainMenuScreen, self).__init__(**kwargs)
         self.cols = 2
         # self.add_widget(Label(text='Main Menu'))
-        btn = Button(text='NITRO', font_size=40)
+        btn = Button(text='NITRO', font_size=60, background_color=(255, 0, 0))
         btn.bind(on_press=self.goto_calculatorNitro)
         self.add_widget(btn)
-        btn = Button(text='Ambasade', font_size=40)
+        btn = Button(text='Ambasade', font_size=60, background_color=(0, 0, 1, 1))
         btn.bind(on_press=self.goto_calculatorAmbasade)
         self.add_widget(btn)
-        btn = Button(text='Mixte', font_size=40)
+        btn = Button(text='Mixte', font_size=60, background_color=(139, 139, 0), color=(0, 0, 0, 1))
         btn.bind(on_press=self.goto_calculatorMixte)
         self.add_widget(btn)
-        btn = Button(text='A.o.p/Coop', font_size=40)
+        btn = Button(text='A.o.p/Coop', font_size=60, background_color=(139, 139, 0), color=(0, 0, 0, 1))
         btn.bind(on_press=self.goto_calculatorAop)
         self.add_widget(btn)
-        btn = Button(text='Obiective A.T.', font_size=40)
+        btn = Button(text='Obiective A.T.', font_size=60, background_color=(0, 0, 1, 1))
         btn.bind(on_press=self.goto_calculatorObiective)
         self.add_widget(btn)
-        btn = Button(text= 'M.o.p.', font_size=40)
+        btn = Button(text='M.o.p.', font_size=60, background_color=(255, 0, 0))
         btn.bind(on_press=self.goto_calculatorMop)
         self.add_widget(btn)
 
@@ -68,11 +71,12 @@ class MainMenuScreen(GridLayout, Screen):
     def goto_calculatorAop(self, instance):
         sm = self.manager
         sm.current = 'calculator_Aop'
+
     def goto_calculatorObiective(self, instance):
         sm = self.manager
         sm.current = 'calculator_ob'
 
-    def goto_calculatorMop(self,instance):
+    def goto_calculatorMop(self, instance):
         sm = self.manager
         sm.current = 'calculator_mop'
 
@@ -81,10 +85,10 @@ class CalculatorNitro(GridLayout, MainMenuButton):
     def __init__(self, **kwargs):
         super(CalculatorNitro, self).__init__(**kwargs)
         self.cols = 2
-        self.add_widget(Label(text='KM plecare:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri plecare:', font_size=40))
         self.kilometri_plecare = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_plecare)
-        self.add_widget(Label(text='KM sosire:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri sosire:', font_size=40))
         self.kilometri_sosire = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_sosire)
         self.add_widget(Label(text='Total KM:', font_size=40))
@@ -138,10 +142,10 @@ class CalculatorAmbasade(GridLayout, MainMenuButton):
     def __init__(self, **kwargs):
         super(CalculatorAmbasade, self).__init__(**kwargs)
         self.cols = 2
-        self.add_widget(Label(text='KM plecare:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri plecare:', font_size=40))
         self.kilometri_plecare = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_plecare)
-        self.add_widget(Label(text='KM sosire:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri sosire:', font_size=40))
         self.kilometri_sosire = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_sosire)
         self.add_widget(Label(text='Total KM:', font_size=40))
@@ -196,10 +200,10 @@ class CalculatorMixte(GridLayout, MainMenuButton):
     def __init__(self, **kwargs):
         super(CalculatorMixte, self).__init__(**kwargs)
         self.cols = 2
-        self.add_widget(Label(text='Kilometri plecare:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri plecare:', font_size=40))
         self.kilometri_plecare = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_plecare)
-        self.add_widget(Label(text='Kilometri sosire:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri sosire:', font_size=40))
         self.kilometri_sosire = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_sosire)
         self.add_widget(Label(text='Total kilometri:', font_size=40))
@@ -287,10 +291,10 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
 
         # add the dropdown button to the main screen
         self.add_widget(self.dropdown2_btn)
-        self.add_widget(Label(text='Kilometri plecare:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri plecare:', font_size=40))
         self.kilometri_plecare = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_plecare)
-        self.add_widget(Label(text='Kilometri sosire:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri sosire:', font_size=40))
         self.kilometri_sosire = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_sosire)
         self.add_widget(Label(text='Total kilometri:', font_size=40))
@@ -530,7 +534,7 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
             self.patrulare.text = ''
 
 
-class CalculatorObiective(GridLayout,MainMenuButton):
+class CalculatorObiective(GridLayout, MainMenuButton):
 
     def __init__(self, **kwargs):
         super(CalculatorObiective, self).__init__(**kwargs)
@@ -553,10 +557,10 @@ class CalculatorObiective(GridLayout,MainMenuButton):
         # add the dropdown button to the main screen
         self.add_widget(self.dropdown_btn)
         self.add_widget(Label(text='', size_hint_y=None, size=(60, 60)))
-        self.add_widget(Label(text='Kilometri plecare:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri plecare:', font_size=40))
         self.kilometri_plecare = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_plecare)
-        self.add_widget(Label(text='Kilometri sosire:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri sosire:', font_size=40))
         self.kilometri_sosire = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_sosire)
         self.add_widget(Label(text='Total kilometri:', font_size=40))
@@ -639,7 +643,8 @@ class CalculatorObiective(GridLayout,MainMenuButton):
             self.drumuri_neamenajate.text = ''
             self.patrulare.text = ''
 
-class CalculatorMentinere(GridLayout,MainMenuButton):
+
+class CalculatorMentinere(GridLayout, MainMenuButton):
 
     def __init__(self, **kwargs):
         super(CalculatorMentinere, self).__init__(**kwargs)
@@ -677,10 +682,10 @@ class CalculatorMentinere(GridLayout,MainMenuButton):
 
         # add the dropdown button to the main screen
         self.add_widget(self.dropdown2_btn)
-        self.add_widget(MyLabel(text='Kilometri plecare:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri plecare:', font_size=40))
         self.kilometri_plecare = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_plecare)
-        self.add_widget(MyLabel(text='Kilometri sosire:', font_size=40))
+        self.add_widget(MyLabelBlue(text='Kilometri sosire:', font_size=40))
         self.kilometri_sosire = TextInput(multiline=False, font_size=40, input_type='number')
         self.add_widget(self.kilometri_sosire)
         self.add_widget(Label(text='Total kilometri:', font_size=40))
@@ -738,7 +743,7 @@ class CalculatorMentinere(GridLayout,MainMenuButton):
                     first = int(self.kilometri_plecare.text)
                     second = int(self.kilometri_sosire.text)
                     difference = second - first
-                    if difference > 0:
+                    if difference >= 0:
                         self.result.text = str(difference)
                         self.kilometri_bucuresti.text = str(30)
                         self.kilometri_alte_localitati.text = str(random.randint(5, 20))
@@ -974,6 +979,8 @@ class CalculatorMentinere(GridLayout,MainMenuButton):
             self.kilometri_alte_localitati.text = 'misiune!'
             self.drumuri_neamenajate.text = ''
             self.patrulare.text = ''
+
+
 class JacAuto(App):
     def build(self):
         sm = ScreenManager()
