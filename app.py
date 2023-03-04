@@ -131,10 +131,10 @@ class CalculatorNitro(GridLayout, MainMenuButton):
                 self.drumuri_neamenajate.text = ''
                 self.patrulare.text = ''
         except ValueError:
-            self.result.text = 'Nu poti sa aduni litere!'
-            self.kilometri_bucuresti.text = ''
-            self.kilometri_alte_localitati.text = ''
-            self.drumuri_neamenajate.text = ''
+            self.result.text = '^ Completează ^'
+            self.kilometri_bucuresti.text = 'corect'
+            self.kilometri_alte_localitati.text = 'spațiile'
+            self.drumuri_neamenajate.text = 'de mai sus!'
             self.patrulare.text = ''
 
 
@@ -188,10 +188,10 @@ class CalculatorAmbasade(GridLayout, MainMenuButton):
                 self.drumuri_neamenajate.text = ''
                 self.patrulare.text = ''
         except ValueError:
-            self.result.text = 'Nu poti sa aduni litere!'
-            self.kilometri_bucuresti.text = ''
-            self.kilometri_alte_localitati.text = ''
-            self.drumuri_neamenajate.text = ''
+            self.result.text = '^ Completează ^'
+            self.kilometri_bucuresti.text = 'corect'
+            self.kilometri_alte_localitati.text = 'spațiile'
+            self.drumuri_neamenajate.text = 'de mai sus!'
             self.patrulare.text = ''
 
 
@@ -246,10 +246,10 @@ class CalculatorMixte(GridLayout, MainMenuButton):
                 self.drumuri_neamenajate.text = ''
                 self.patrulare.text = ''
         except ValueError:
-            self.result.text = 'Nu poti sa aduni litere!'
-            self.kilometri_bucuresti.text = ''
-            self.kilometri_alte_localitati.text = ''
-            self.drumuri_neamenajate.text = ''
+            self.result.text = '^ Completează ^'
+            self.kilometri_bucuresti.text = 'corect'
+            self.kilometri_alte_localitati.text = 'spațiile'
+            self.drumuri_neamenajate.text = 'de mai sus!'
             self.patrulare.text = ''
 
 
@@ -341,10 +341,10 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Snagov' or localitate == 'Popești-Leordeni' or localitate == 'Otopeni':
                 try:
@@ -364,10 +364,10 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Pantelimon' or localitate == 'Voluntari':
                 try:
@@ -387,10 +387,10 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Măgurele':
                 try:
@@ -410,10 +410,10 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             else:
                 self.result.text = 'Selectează'
@@ -441,10 +441,10 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Snagov' or localitate == 'Popești-Leordeni' or localitate == 'Otopeni':
                 try:
@@ -465,10 +465,10 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Pantelimon' or localitate == 'Voluntari':
                 try:
@@ -489,10 +489,10 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Măgurele':
                 try:
@@ -514,10 +514,10 @@ class CalculatorAsigurare(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
 
             else:
@@ -606,10 +606,10 @@ class CalculatorObiective(GridLayout, MainMenuButton):
                     self.drumuri_neamenajate.text = ''
                     self.patrulare.text = ''
             except ValueError:
-                self.result.text = 'Nu poti sa aduni litere!'
-                self.kilometri_bucuresti.text = ''
-                self.kilometri_alte_localitati.text = ''
-                self.drumuri_neamenajate.text = ''
+                self.result.text = '^ Completează ^'
+                self.kilometri_bucuresti.text = 'corect'
+                self.kilometri_alte_localitati.text = 'spațiile'
+                self.drumuri_neamenajate.text = 'de mai sus!'
                 self.patrulare.text = ''
 
         elif self.dropdown_btn.text == 'Alte Obiective':
@@ -631,10 +631,10 @@ class CalculatorObiective(GridLayout, MainMenuButton):
                     self.drumuri_neamenajate.text = ''
                     self.patrulare.text = ''
             except ValueError:
-                self.result.text = 'Nu poti sa aduni litere!'
-                self.kilometri_bucuresti.text = ''
-                self.kilometri_alte_localitati.text = ''
-                self.drumuri_neamenajate.text = ''
+                self.result.text = '^ Completează ^'
+                self.kilometri_bucuresti.text = 'corect'
+                self.kilometri_alte_localitati.text = 'spațiile'
+                self.drumuri_neamenajate.text = 'de mai sus!'
                 self.patrulare.text = ''
         else:
             self.result.text = 'Selectează'
@@ -733,10 +733,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Snagov':
                 try:
@@ -757,10 +757,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Popești-Leordeni' or localitate == 'Otopeni':
                 try:
@@ -781,10 +781,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Pantelimon' or localitate == 'Voluntari':
                 try:
@@ -805,10 +805,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Măgurele':
                 try:
@@ -829,10 +829,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             else:
                 self.result.text = 'Selectează'
@@ -861,10 +861,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Snagov':
                 try:
@@ -886,10 +886,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Popești-Leordeni' or localitate == 'Otopeni':
                 try:
@@ -910,10 +910,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Pantelimon' or localitate == 'Voluntari':
                 try:
@@ -935,10 +935,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
             elif localitate == 'Măgurele':
                 try:
@@ -961,10 +961,10 @@ class CalculatorMentinere(GridLayout, MainMenuButton):
                         self.drumuri_neamenajate.text = ''
                         self.patrulare.text = ''
                 except ValueError:
-                    self.result.text = 'Nu poti sa aduni litere!'
-                    self.kilometri_bucuresti.text = ''
-                    self.kilometri_alte_localitati.text = ''
-                    self.drumuri_neamenajate.text = ''
+                    self.result.text = '^ Completează ^'
+                    self.kilometri_bucuresti.text = 'corect'
+                    self.kilometri_alte_localitati.text = 'spațiile'
+                    self.drumuri_neamenajate.text = 'de mai sus!'
                     self.patrulare.text = ''
 
             else:
