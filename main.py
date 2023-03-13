@@ -9,7 +9,7 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 
-
+#blue color for the labels
 class MyLabelBlue(Label):
     def __init__(self, **kwargs):
         super(MyLabelBlue, self).__init__(**kwargs)
@@ -22,7 +22,7 @@ class MyLabelBlue(Label):
         self.rect.pos = instance.pos
         self.rect.size = instance.size
 
-
+#main menu button for every calculator
 class MainMenuButton(Screen):
     def __init__(self, **kwargs):
         super(MainMenuButton, self).__init__(**kwargs)
@@ -31,7 +31,7 @@ class MainMenuButton(Screen):
         sm = self.manager
         sm.current = 'main_menu'
 
-
+#starting screen with 6 buttons for 6 different types of calculators
 class MainMenuScreen(GridLayout, Screen):
     def __init__(self, **kwargs):
         super(MainMenuScreen, self).__init__(**kwargs)
@@ -55,7 +55,7 @@ class MainMenuScreen(GridLayout, Screen):
         btn = Button(text='Obiective A.T.', font_size=115, background_color=(0, 0, 1, 1))
         btn.bind(on_press=self.goto_calculatorObiective)
         self.add_widget(btn)
-
+#functions for every button functionality
     def goto_calculatorNitro(self, instance):
         sm = self.manager
         sm.current = 'calculator_Nitro'
@@ -85,12 +85,14 @@ class CalculatorNitro(GridLayout, MainMenuButton):
     def __init__(self, **kwargs):
         super(CalculatorNitro, self).__init__(**kwargs)
         self.cols = 2
+#two labels with input
         self.add_widget(MyLabelBlue(text='Kilometri plecare:', font_size=65))
         self.kilometri_plecare = TextInput(multiline=False, font_size=65, input_type='number')
         self.add_widget(self.kilometri_plecare)
         self.add_widget(MyLabelBlue(text='Kilometri sosire:', font_size=65,size_hint_x=1.4))
         self.kilometri_sosire = TextInput(multiline=False, font_size=65, input_type='number')
         self.add_widget(self.kilometri_sosire)
+#subcategories
         self.add_widget(Label(text='Total kilometri:', font_size=65))
         self.result = Label(text='', font_size=70)
         self.add_widget(self.result)
